@@ -49,7 +49,7 @@ class LLMText:
             "required": {                
                 "prompt": ("STRING", {"multiline": True, "dynamicPrompts": True, "default":"请输入中文提示词"}),
                 "max_tokens": ("INT", {"default": 128, "step": 1, "min": 1, "max": 1024, "display": "slider"}),                   
-                "system_role": (['中译英助手','提示词工程师'], {"default":"中译英助手"}),
+                "system_role": (['Chinese-to-English translator','prompt word engineer'], {"default":"Chinese-to-English translator"}),
                 "modelname": (['Qwen/Qwen2.5-1.5B-Instruct','cognitivecomputations/dolphin-2.9.4-gemma2-2b'], {"default":'Qwen/Qwen2.5-1.5B-Instruct'}),
                 "device": (['cuda', 'cpu'], {"default": 'cuda'}),
             }
@@ -60,10 +60,10 @@ class LLMText:
     CATEGORY = "ZSQ/LLM"
     
     def run(self, modelname, device,prompt, system_role,max_tokens):
-        if system_role == '中译英助手':
+        if system_role == 'Chinese-to-English translator':
             system_instruction = 'You are a Chinese-to-English translator'
             prompt = 'Only translate the following from Chinese to English and output：' + prompt
-        elif system_role == '提示词工程师':
+        elif system_role == 'prompt word engineer':
             system_instruction = 'you are a stable-diffusion prompt word engineer'
             prompt = 'Conceive a picture, describe the details of the picture in just 5 phrases, do not have your subjective thoughts, output in English:'+ prompt
         else:
