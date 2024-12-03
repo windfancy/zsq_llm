@@ -58,12 +58,12 @@ def replace_image_text(image_text):
 
 class LLMImage:
     def __init__(self):
-        pass
-    @classmethod
-    def INPUT_TYPES(self):
         self.model = None
         self.processor = None
         self.modelname = None
+    @classmethod
+    def INPUT_TYPES(s):
+        
         return {
             "required": {                
                 "Input_Image": ("IMAGE",),
