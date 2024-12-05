@@ -61,8 +61,8 @@ class Loader_sampler:
             "scheduler": (comfy.samplers.KSampler.SCHEDULERS,),
             "denoise": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.01}),        
         },
-        "optional": {"optional_lora_stack": ("LORA_STACK",), 
-                     "optional_controlnet_stack": ("CONTROL_NET_STACK",),},           
+        #"optional": {"optional_lora_stack": ("LORA_STACK",), 
+        #             "optional_controlnet_stack": ("CONTROL_NET_STACK",),},           
 
         }
 
